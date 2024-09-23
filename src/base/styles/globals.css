@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth text-m text-gray-900;
+  }
+
+  *:focus,
+  *:focus-visible {
+    @apply !outline-none;
+  }
+
+  .hero-slider .swiper-slide {
+    @apply !opacity-0	transition-all duration-200 ease-linear;
+  }
+
+  .hero-slider .swiper-slide-visible {
+    @apply z-[2] !opacity-100;
+  }
+
+  input[type='range']::-webkit-slider-thumb {
+    @apply relative mt-1 h-7 w-7 cursor-pointer appearance-none rounded-full border-0 bg-gray-200;
+    pointer-events: all;
+  }
+
+  input[type='range']::-moz-range-thumb {
+    @apply relative mt-1 h-7 w-7 cursor-pointer appearance-none rounded-full border-0 bg-gray-200;
+    pointer-events: all;
+  }
+
+  .scrollable-container::-webkit-scrollbar {
+    @apply !hidden;
+  }
+}
+
+@layer components {
+  .blog-main-content {
+    @apply md:p-0;
+  }
+
+  .blog-main-content li {
+    @apply list-disc ltr:ml-3 rtl:mr-3;
+  }
+
+  .blog-main-content h1,
+  .blog-main-content h2 {
+    @apply self-start font-medium leading-none rem:text-[30px] ltr:text-left rtl:text-right pt-3;
+  }
+
+  .blog-main-content h3 {
+    @apply self-start font-medium leading-none rem:text-[24px] ltr:text-left rtl:text-right pt-3;
+  }
+
+  .blog-main-content h4 {
+    @apply self-start font-medium leading-none rem:text-[20px] ltr:text-left rtl:text-right pt-3;
+  }
+
+  .blog-main-content h1 {
+    @apply md:text-center md:text-4xl;
+  }
+
+  .blog-main-content ul {
+    @apply pt-2;
+  }
+
+  .blog-main-content p {
+    @apply text-s pt-2;
+  }
+
+  .blog-main-content img {
+    @apply my-4;
+  }
+
+  .blog-main-content strong {
+    @apply mb-6 block text-l font-medium md:text-xl;
+  }
+
+  .blog-main-content > div > * {
+    @apply mx-6 md:mx-auto md:w-full rem:md:max-w-[774px];
+  }
+
+  .blog-main-content > div > div {
+    @apply mx-auto md:max-h-full;
+  }
+
+  .blog-main-content a {
+    @apply text-tone-700;
+  }
+
+  .blog-main-content h1 ~ p:first-of-type {
+    @apply text-center text-gray-400;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  *::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  * {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+.gm-style {
+  font-family: var(--font-sf-pro), 'sans-serif';
+}
+
+@supports (-webkit-touch-callout: none) {
+  /* iOS */
+  .ios-menu-padding {
+    @apply pb-32;
+  }
+}
